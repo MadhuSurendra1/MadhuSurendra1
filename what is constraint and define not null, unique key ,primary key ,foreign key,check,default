@@ -1,0 +1,15 @@
+constraint :- A set of properties or conditions which are applying while we are creating new table or existing table as well . 
+
+NOT NULL    :- Not null can be created on  the top of the table column  , it does not allow any null values to that particular column . 
+
+UNIQUE KEY  :- It Ensures that all values in a column are different  
+
+PRIMARY KEY :- it's a combination of a 'not null' and 'unique' uniquely identofies each row in a table 
+
+FOREIGN KEY :- A forign key is a database key , that is used to link two tables together . 
+              The foreign key constraints identifies the relationship between the database tables by refering a column .
+			        it's relation also known as parent(primary key ) and child table(foreign key ) 
+
+check       :-Ensures that the values in a  column satisfies a specifies the condition 
+
+DEFAULT     :- Sets a default value for a column if no value is specified 
