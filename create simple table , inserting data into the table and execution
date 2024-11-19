@@ -1,0 +1,14 @@
+
+ use madhu
+ Go
+
+-- creating the simple table 
+create table TBSL (TID int , Tname Varchar(60) , TMail Nvarchar(60))
+
+--inserting data into the table 
+insert into TBSL values (1,'madhu','madhusurendramangali@gmail.com')
+insert into TBSL values (2,'dibakka','maghuva1@gmail.com')
+insert into TBSL values (3,'rajesh','maghuva2@gmail.com')
+
+--- executing the table 
+select * from TBSL
