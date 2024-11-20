@@ -1,0 +1,20 @@
+variables:-
+  A variable can store the single values at a time . 
+  User defined variables define with the '@' symbol .
+  The scope of variable exists till that execution only .  
+  All the statements which are belongs to variables that should be single batch execution . 
+  The default value of a variable is null . 
+
+Examples :-
+   i) Declare @Name varchar(50)
+		  set @Name ='Martin'
+		  select @name as name 
+
+	ii) use AdventureWorks2019
+		  go 
+		  declare @row1 int 
+		  declare @row2 int
+		  set @row1=1
+		  set @row2=10
+		  select Top(@row2) * from humanresources.employee 
+		  select * from HumanResources.Employee where BusinessEntityID between @row1 and @row2
