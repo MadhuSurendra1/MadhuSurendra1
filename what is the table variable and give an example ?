@@ -1,0 +1,14 @@
+table variable :-
+
+table variables are single execution of Query statements .
+the Scope of table variable exists till that execution only . 
+
+example :-
+
+Declare @employeetable table  (eid int , ename varchar(50))
+insert into  @employeetable values (1,'VASU')
+insert into  @employeetable values (2,'Raaji')
+insert into  @employeetable values (3,'Ramu')
+insert into  @employeetable values (4,'Raju')
+insert into  @employeetable values (5,'Raghu')
+select * from @employeetable
