@@ -1,0 +1,15 @@
+-- finding the duplicate rows from the employee table 
+select eid ,  count(*)  as count from employee group by eid  having count(*) >1
+                          (or)
+
+with cte_employee
+as 
+(select eid,ROW_NUMBER() over (partition by eid  order by eid)as row_number from employee )
+select * from cte_employee where row_number>1
+
+-- deleting the duplicate rows from the employee table 
+
+with cte_employee
+as 
+(select eid,ROW_NUMBER() over (partition by eid  order by eid)as row_number from employee )
+delete  cte_employee where row_number>1
