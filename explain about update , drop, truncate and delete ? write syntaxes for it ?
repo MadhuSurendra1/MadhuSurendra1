@@ -1,0 +1,22 @@
+update   :- update statement is used to modify the existing records in a table. 
+
+drop     :- drop statement is used to delete the entire table .
+
+truncate :- truncate statement is used to delete the data In the table with in a single shot . 
+
+delete   :- delete statement is used TO delete the records from a table using step by step method . 
+
+Syntax :- 
+
+update :-
+   update employee
+   set  eid=12 where ename='Ramya'
+
+  drop :- 
+  drop table employee 
+
+  truncate :- 
+    truncate table employee 
+
+  delete 
+    delete from employee where eid=8
