@@ -1,0 +1,18 @@
+temp table :- temporary tables are mainly used to store the data temporarily . 
+       when we perform the DML operations on the top of the temp tables ,the changes will not affect for the physical tables (Base tables)
+
+--> temp tables are classifed into two types 
+   1. local temp table
+   2.global temp table 
+
+   local temp table can be identified by single '#' symbol
+   Global temp table can be identified by double '#' symbol
+
+---> syntaxes :-
+     
+	 create table #employee(eid int , ename varchar(50))
+	 create table ##employee(eid int , ename varchar(50))
+
+-->transfering data from old table to new table 
+
+select top 100 * into #employee from employees 
