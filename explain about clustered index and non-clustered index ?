@@ -1,0 +1,70 @@
+
+-- clustered index :-
+ A clustered index is established under two specific conditions :
+
+1. The data or file being moved into secondary memory must be in 
+   sequential or sorted order
+
+2. A unique key value is required, meaning there should be no repeated 
+   values.
+
+   When implementing clustered indexing in a table, it organizes the data 
+   within that table. Similar to a primary key, only one clustered index can be 
+   created for a table. A clustered index can be likened to a dictionary, 
+   arranging data in alphabetical order.
+
+-->Example of Clustered Index:
+
+   If a primary key is applied to any column, it automatically becomes a 
+   clustered index.
+
+-->explanation :-the column, which is a primary key, serves as 
+                 a clustered index.
+
+   CREATE TABLE Employe (
+           EmpID INT PRIMARY KEY,
+           EFirstName VARCHAR(50),
+           ELastName VARCHAR(50), 
+           EDeptID INT
+          );
+
+    INSERT INTO Employe VALUES (101, 'John', 'Doe', 1);
+    INSERT INTO Employe VALUES (102, 'Jane', 'Smith', 2);
+    INSERT INTO Employe VALUES (103, 'Bob', 'Johnson', 1);
+
+2.non-clustered index :-
+     The concept of a non-clustered index can be likened to the index of a book. 
+     Similar to how a book's index consists of chapter names and page numbers, 
+     allowing quick access to specific topics, a non-clustered index in a 
+     database provides a way to swiftly locate data without the need to traverse 
+     every record.
+     
+     In contrast to a clustered index where data and index are stored together, a 
+     non-clustered index keeps the data and index in separate locations. This 
+     distinction allows for the existence of multiple non-clustered indexes within 
+     a single table.
+     
+     In a non-clustered index, the index contains pointers to the data.
+
+
+Example of non Clustered Index :- By creating table  employe with empid ,Efirstname,ELastname,Edeptid ,  
+               Here by applying primary key  to the empid it's automatically created the clustered index  . 
+               and we can apply non clustered index physically to the columns like EFirstName,ELastName,EDeptID . 
+ ______________________________
+	      CREATE TABLE Employe (
+                EmpID INT PRIMARY KEY,
+		            EFirstName VARCHAR(50),
+                ELastName VARCHAR(50),
+		            EDeptID INT
+               );
+
+   create nonclustered index indx_Efirstname on employe(EFirstname)
+    create nonclustered index indx_ELasttname on employe(ELastname)
+
+    explanation :- Here we created nonclustered index not applied automatically like a clustered index 
+              then physically we can created the nonclustered index on columns like EFirstname,ELastname
+
+
+
+
+
