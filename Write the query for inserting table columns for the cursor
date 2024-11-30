@@ -1,0 +1,18 @@
+--declaring variables for the columns what you have to insert 
+declare @tid int 
+declare @tname varchar(50)
+-- declaring cursorname on table for the your output
+declare cur_TBSL cursor for 
+--here you can select the columns from your table for declared variables to insert into the cursor  
+select TID,Tname from TBSL order by Tname ASc 
+open cur_TBSL
+fetch next from cur_TBSL into  @tid,@tname
+while @@FETCH_STATUS = 0
+begin 
+--here we are inserting the column values from the cursor into table by using fetch 
+insert into TBSL (TID,Tname) values (@tid,@tname)
+fetch next from cur_TBSL into @tid,@tname
+end 
+--here we can close the cursor and by deallocateing cursor then cursor is going to run 
+close cur_TBSL
+deallocate cur_TBSL
