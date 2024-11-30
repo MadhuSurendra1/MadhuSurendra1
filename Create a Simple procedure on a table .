@@ -1,0 +1,24 @@
+--write a query to create a procedure by inserting records to a table .
+    create  procedure proc_tbsl_insert
+    @tid int ,
+    @tname varchar
+    as 
+    begin 
+    insert into TBSL(TID,Tname) values (@tid,@tname)
+    end 
+
+--By executing statement we can insert the values to a table  
+
+      exec proc_tbsl_insert 1,'m'
+=====================================================================================
+
+-- write procedure to update tmail where tmail is null in tbsl table 
+    create procedure proc_tbsl_update
+    as 
+    begin 
+    update TBSL set TMail='baluiiob@gmail.com' where TMail is null 
+    end 
+
+----By executing statement we can update the rows from a table 
+
+      exec proc_tbsl_update 
